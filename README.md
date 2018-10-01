@@ -10,3 +10,6 @@ Course content -- https://goo.gl/Xv4ZgB
 Nodejs download -- https://nodejs.org/en/download/current/
 
 Within "Server" file run -- "npm init" and accept defaults -- "npm install --save express"
+
+
+ --- LOOK INTO "Heroku" CAN THIS BE DONE ON AWS INSTEAD -- OR IS "Heroku" EASY ENOUGH/WOTHER THE HASTLE TO SET UP
