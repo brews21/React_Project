@@ -13,3 +13,17 @@ Within "Server" file run -- "npm init" and accept defaults -- "npm install --sav
 
 
  --- LOOK INTO "Heroku" CAN THIS BE DONE ON AWS INSTEAD -- OR IS "Heroku" EASY ENOUGH/WOTHER THE HASTLE TO SET UP
+
+
+NPM installs
+ --npm install --save express
+ --npm install --save passport passport-google-oauth20
+ --npm install --save nodemon
+
+
+package.json -- how to start Server
+
+"scripts": {
+  "start": "node index.js",
+  "dev": "nodemon index.js"
+},
