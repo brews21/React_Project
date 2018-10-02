@@ -31,6 +31,8 @@ passport.use(new GoogleStrategy({
   })
 );
 
+
+
 // passport.authenticate "google" -- knows to use the GoogleStrategy has an internal data which states if 'google' is used then use me
 // 'scope' -- is what access/permission to get from google -- google has many inbuilt "scope" to use
 app.get('/auth/google', passport.authenticate('google', {
