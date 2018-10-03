@@ -26,4 +26,8 @@ module.exports = app => {
   app.get("/test", (req, res) => {
     res.send({ bye: "bye" });
   });
+
+  app.get("/test2", (req, res) => {
+    res.send({ NodeVM: "NodeApp_VM" });
+  });
 };
