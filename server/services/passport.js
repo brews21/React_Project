@@ -3,7 +3,6 @@ const GoogleStrategy = require("passport-google-oauth20").Strategy; // Only need
 
 const keys = require("../config/keys");
 
-
 // Google OAuth
 // .use -- passport to handle auth with a certian auth type -- GoogleStrategy
 passport.use(

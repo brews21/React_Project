@@ -24,6 +24,6 @@ module.exports = app => {
   });
 
   app.get("/test", (req, res) => {
-    res.send({ bye: "there" });
+    res.send({ bye: "bye" });
   });
 };
