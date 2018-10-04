@@ -35,3 +35,5 @@ MongoDB
 
 Third party hosted MongoDB
 -- https://mlab.com/databases/emaily-dev#users
+
+every time we make connections to mongodb it is a async action -- promises
