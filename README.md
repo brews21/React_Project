@@ -21,12 +21,16 @@ NPM installs
 --npm install --save mongoose
 --npm install --save cookie-session
 
-package.json -- how to start Server
-
+package.json -- scripts to call
 "scripts": {
 "start": "node index.js",
 "dev": "nodemon index.js"
 },
+
+To start the SERVER
+either;
+-- node index.js
+-- npm run dev
 
 HTTP is stateless
 -- http cannot share info between requests
