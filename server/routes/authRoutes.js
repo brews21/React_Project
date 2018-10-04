@@ -13,6 +13,14 @@ module.exports = app => {
 
   app.get("/auth/google/callback", passport.authenticate("google"));
 
+  app.get("/api/current_user", (req, res) => {
+    res.send(req.user);
+  });
+
+  app.get("/api/logout", (req, res) => {
+    req.logout();
+  });
+
   // app -- represent the underlining express app
   // get -- route handler, http request (get, put, post, delete, patch)
   // '/' - watch for incoming requests -- route portion of the handler -- localhost:5000/
@@ -25,9 +33,5 @@ module.exports = app => {
 
   app.get("/test", (req, res) => {
     res.send({ bye: "bye" });
-  });
-
-  app.get("/api/current_user", (req, res) => {
-    res.send(req.user);
   });
 };
