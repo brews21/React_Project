@@ -11,7 +11,8 @@ Nodejs download -- https://nodejs.org/en/download/current/
 
 Within "Server" file run -- "npm init" and accept defaults -- "npm install --save express"
 
---- LOOK INTO "Heroku" CAN THIS BE DONE ON AWS INSTEAD -- OR IS "Heroku" EASY ENOUGH/WOTHER THE HASTLE TO SET UP
+--- LOOK INTO "Heroku" CAN THIS BE DONE ON AWS INSTEAD -- OR IS "Heroku" EASY ENOUGH/WORTH THE HASTLE TO SET UP
+-- CAN BE RAN ON AWS, WILL HAVE TO INSTALL NODEJS ON THE SERVER -- WILL NEED TO LOOK INTO HOE NGINX CAN FIT INTO IT
 
 NPM installs
 --npm install --save express
@@ -28,3 +29,9 @@ package.json -- how to start Server
 HTTP is stateless
 -- http cannot share info between requests
 -- cookies/ tokens ... are used to identify you to a server per http request
+
+MongoDB
+-- a schema-less DB -- one difference compared to SQL and Postgres
+
+Third party hosted MongoDB
+-- https://mlab.com/databases/emaily-dev#users

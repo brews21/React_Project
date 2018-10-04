@@ -1,6 +1,10 @@
 const express = require("express"); // uses common modules for node -- use these on server side
 //import express from 'express' -- would be use on the front end
 require("./services/passport");
+const mongoose = require("mongoose");
+const keys = require("./config/keys");
+
+mongoose.connect(keys.mongoURL);
 
 // the express app variable
 const app = express();
