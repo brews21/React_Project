@@ -26,4 +26,8 @@ module.exports = app => {
   app.get("/test", (req, res) => {
     res.send({ bye: "bye" });
   });
+
+  app.get("/api/current_user", (req, res) => {
+    res.send(req.user);
+  });
 };
