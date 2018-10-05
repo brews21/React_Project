@@ -43,3 +43,18 @@ Third party hosted MongoDB
 -- https://mlab.com/databases/emaily-dev#users
 
 every time we make connections to mongodb it is a async action -- promises
+
+Optional Vid at end of Section4
+
+-- with the code we include any cookie management automatically
+-- two types of cookie handlers -- cookies-session and express-session
+
+express-session vs cookie-session
+-- key difference is that express is a reference to a session whereas cookie-session is the session
+-- stores a reference to the session
+-- cookie-session will store the data in the cookie, express will store in a remote "session store"
+-- cookies are limited to 14kb whereas express-session has an "unlimited" amount
+
+cookies-session takes the userID, finds the user and sets it on the req.session.
+
+express-session takes the seesionID and looks up the relevent info from the session store, which returns all the data. store data in a remote datastore
