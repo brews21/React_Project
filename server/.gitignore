@@ -61,4 +61,4 @@ typings/
 .next
 
 # config keys used for auths
-config/
+config/dev.js
