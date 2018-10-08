@@ -12,7 +12,7 @@ Nodejs download -- https://nodejs.org/en/download/current/
 Within "Server" file run -- "npm init" and accept defaults -- "npm install --save express"
 
 --- LOOK INTO "Heroku" CAN THIS BE DONE ON AWS INSTEAD -- OR IS "Heroku" EASY ENOUGH/WORTH THE HASTLE TO SET UP
--- CAN BE RAN ON AWS, WILL HAVE TO INSTALL NODEJS ON THE SERVER -- WILL NEED TO LOOK INTO HOE NGINX CAN FIT INTO IT
+-- CAN BE RAN ON AWS, WILL HAVE TO INSTALL NODEJS ON THE SERVER -- WILL NEED TO LOOK INTO HOW NGINX CAN FIT INTO IT
 
 NPM installs
 --npm install --save express
