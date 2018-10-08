@@ -30,23 +30,20 @@ passport.use(
       callbackURL: "/auth/google/callback",
       proxy: true
     },
-    (accessToken, refreshToken, profile, done) => {
-      User.findOne({ googleID: profile.id }).then(existingUser => {
-        // .then is part of a async request -- this is a promise
-        if (existingUser) {
-          //all ready have a record with given profile ID
+    async (accessToken, refreshToken, profile, done) => {
+      const existingUser = User.findOne({ googleID: profile.id });
+      // .then is part of a async request -- this is a promise
+      if (existingUser) {
+        //all ready have a record with given profile ID
 
-          // call "done" -- states we have done someting with passport
-          //-- requires two pramas 1st is a error, second is the user being affected
-          done(null, existingUser);
-        } else {
-          // no record, Create a new one
-          //this is also a promise
-          new User({ googleID: profile.id })
-            .save()
-            .then(user => done(null, user));
-        }
-      });
+        // call "done" -- states we have done someting with passport
+        //-- requires two pramas 1st is a error, second is the user being affected
+        return done(null, existingUser);
+      }
+      // no record, Create a new one
+      //this is also a promise
+      const user = await new User({ googleID: profile.id }).save();
+      done(null, user);
     }
   )
 );
