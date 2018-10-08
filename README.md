@@ -23,6 +23,10 @@ NPM installs
 --npm install -g create-react-app
 --npm install --save concurrently
 
+---- NEED TO INSTALL THIS ----
+--npm install --save http-proxy-middleware
+------------------------------
+
 package.json -- scripts to call
 "scripts": {
 "start": "node index.js",
