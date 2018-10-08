@@ -20,6 +20,8 @@ NPM installs
 --npm install --save nodemon
 --npm install --save mongoose
 --npm install --save cookie-session
+--npm install -g create-react-app
+--npm install --save concurrently
 
 package.json -- scripts to call
 "scripts": {
@@ -58,3 +60,12 @@ express-session vs cookie-session
 cookies-session takes the userID, finds the user and sets it on the req.session.
 
 express-session takes the seesionID and looks up the relevent info from the session store, which returns all the data. store data in a remote datastore
+
+React App
+
+--https://github.com/facebook/create-react-app
+
+within "server" -- create-react-app client -- this will create a react app, named "client"
+react app has its own server -- npm start -- within the client folder -- localhost:3000
+  --this will generate a boiler plant application
+    -- app.js (server/client/src/app.js)
