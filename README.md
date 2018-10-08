@@ -22,15 +22,14 @@ NPM installs
 --npm install --save cookie-session
 --npm install -g create-react-app
 --npm install --save concurrently
-
----- NEED TO INSTALL THIS ----
 --npm install --save http-proxy-middleware
-------------------------------
 
 package.json -- scripts to call
 "scripts": {
-"start": "node index.js",
-"dev": "nodemon index.js"
+  "start": "node index.js",
+  "server": "nodemon index.js",
+  "client": "npm run start --prefix client",
+  "dev": "concurrently \"npm run server\" \"npm run client\""
 },
 
 To start the SERVER
