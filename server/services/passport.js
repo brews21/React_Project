@@ -11,10 +11,12 @@ passport.serializeUser((user, done) => {
   // user.id is the unique ID that mongo assigns when added to the DB -- we are getting that not the profile ID4
   // this is because not every user entry in the db will contain a google profile ID as we might use another OAuth method, but mongo will always have a ID
   // we only care about the id mongo assigns as this is unique to our DB
+  console.log(user.id);
   done(null, user.id);
 });
 
 passport.deserializeUser((id, done) => {
+  console.log(id);
   User.findById(id).then(user => {
     done(null, user);
   });
@@ -31,7 +33,7 @@ passport.use(
       proxy: true
     },
     async (accessToken, refreshToken, profile, done) => {
-      const existingUser = User.findOne({ googleID: profile.id });
+      const existingUser = await User.findOne({ googleId: profile.id });
       // .then is part of a async request -- this is a promise
       if (existingUser) {
         //all ready have a record with given profile ID
