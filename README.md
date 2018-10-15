@@ -15,21 +15,30 @@ Within "Server" file run -- "npm init" and accept defaults -- "npm install --sav
 -- CAN BE RAN ON AWS, WILL HAVE TO INSTALL NODEJS ON THE SERVER -- WILL NEED TO LOOK INTO HOW NGINX CAN FIT INTO IT
 
 NPM installs
+Server Side installs
 --npm install --save express
 --npm install --save passport passport-google-oauth20
 --npm install --save nodemon
 --npm install --save mongoose
 --npm install --save cookie-session
+--npm install --save stripe
+--npm install --save body-parser
+
+Client Side installs
 --npm install -g create-react-app
 --npm install --save concurrently
 --npm install --save http-proxy-middleware
+--npm install --save redux react-redux react-router-dom
+--npm install --save materialize-css
+--npm install --save axios redux-thunk
+--npm install --save react-stripe-checkout
 
 package.json -- scripts to call
 "scripts": {
-  "start": "node index.js",
-  "server": "nodemon index.js",
-  "client": "npm run start --prefix client",
-  "dev": "concurrently \"npm run server\" \"npm run client\""
+"start": "node index.js",
+"server": "nodemon index.js",
+"client": "npm run start --prefix client",
+"dev": "concurrently \"npm run server\" \"npm run client\""
 },
 
 To start the SERVER
@@ -70,5 +79,5 @@ React App
 
 within "server" -- create-react-app client -- this will create a react app, named "client"
 react app has its own server -- npm start -- within the client folder -- localhost:3000
-  --this will generate a boiler plant application
-    -- app.js (server/client/src/app.js)
+--this will generate a boiler plant application
+-- app.js (server/client/src/app.js)
