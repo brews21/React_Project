@@ -4,7 +4,8 @@ const { Schema } = mongoose; // -- this is valid same syntax as "const Schema = 
 
 // creating a common schema that every DB user object will have
 const userSchema = new Schema({
-  googleID: String
+  googleID: String,
+  credits: { type: Number, default: 0 }
 });
 
 // putting the schema into mongoose

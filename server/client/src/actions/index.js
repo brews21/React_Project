@@ -11,5 +11,6 @@ export const fetchUser = () => async dispatch => {
 export const handleToken = token => async dispatch => {
   const res = await axios.post("/api/stripe", token);
 
+  // call the authReducer claas whiuch make the header update the text
   dispatch({ type: FETCH_USER, payload: res.data });
 };

@@ -21,6 +21,8 @@ Server Side installs
 --npm install --save nodemon
 --npm install --save mongoose
 --npm install --save cookie-session
+--npm install --save stripe
+--npm install --save body-parser
 
 Client Side installs
 --npm install -g create-react-app
