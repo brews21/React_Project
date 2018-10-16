@@ -3,6 +3,7 @@ const express = require("express"); // uses common modules for node -- use these
 
 // pulling in js so it will be excuted --
 require("./models/user"); // order of operations this must be done before calling "passport"
+require("./models/survey");
 require("./services/passport");
 
 const mongoose = require("mongoose");
@@ -35,6 +36,7 @@ app.use(passport.session());
 // assiging the function within authRoutes
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
+require("./routes/surveyRoutes")(app);
 
 // listen on port 5000
 // const PORT = process.env.PORT || 5000; // boolean variable for deciding what the value should be -- either get the env var or be 5000
