@@ -36,6 +36,23 @@ app.use(passport.session());
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
 
+// if im production
+/*
+if(process.env.NODE_ENV === "production"){
+  // express will serve up production assests
+  // like main.js or main.css
+  // if someone come looking for a route we donot understand
+  // then look in here
+  app.use(express.static("client/build"));
+  
+  // express will serve up index.html if 
+  // it doesnt recognize the routes
+  const path = require("path");
+  app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+});
+}
+*/
 // listen on port 5000
 // const PORT = process.env.PORT || 5000; // boolean variable for deciding what the value should be -- either get the env var or be 5000
 app.listen(5000);

@@ -81,3 +81,7 @@ within "server" -- create-react-app client -- this will create a react app, name
 react app has its own server -- npm start -- within the client folder -- localhost:3000
 --this will generate a boiler plant application
 -- app.js (server/client/src/app.js)
+
+Deployment
+when using -- "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+in the package.json, this is for the heroku build -- when using it to build the app on its server
