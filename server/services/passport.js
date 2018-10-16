@@ -35,7 +35,7 @@ passport.use(
     async (accessToken, refreshToken, profile, done) => {
       const existingUser = await User.findOne({ googleID: profile.id });
 
-      //console.log("PROFILE ID : " + profile.id);
+      console.log("PROFILE ID : " + profile.displayName);
       //console.log("existingUser : " + existingUser.id);
 
       // .then is part of a async request -- this is a promise
@@ -51,7 +51,10 @@ passport.use(
         // no record, Create a new one
         //this is also a promise
         //console.log("NOT LOGGED IN ADDING NEW USER");
-        const user = await new User({ googleID: profile.id }).save();
+        const user = await new User({
+          googleID: profile.id,
+          DisplayName: profile.displayName
+        }).save();
         done(null, user);
       }
     }

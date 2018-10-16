@@ -12,16 +12,23 @@ class Header extends Component {
       case false:
         return (
           <li>
-            <a href="/auth/google">Login With Google</a>
+            <a href="/auth/google" style={{ margin: "0 10px" }}>
+              Login With Google
+            </a>
           </li>
         );
         break;
       default:
         return [
-          <li key="1">
+          <li key="0" style={{ margin: "0 10px" }}>
+            {this.props.auth.DisplayName}
+          </li>,
+          <li key="1" style={{ margin: "0 10px" }}>
             <Payments />
           </li>,
-          <li key="2">Credits: {this.props.auth.credits}</li>,
+          <li key="2" style={{ margin: "0 10px" }}>
+            Credits: {this.props.auth.credits}
+          </li>,
           <li key="3" style={{ margin: "0 10px" }}>
             <a href="/api/logout">Logout</a>
           </li>
@@ -37,6 +44,7 @@ class Header extends Component {
           <Link
             to={this.props.auth ? "/surveys" : "/"}
             className="left brand-logo"
+            style={{ margin: "0 10px" }}
           >
             Emaily
           </Link>
