@@ -8,7 +8,6 @@ class Header extends Component {
     switch (this.props.auth) {
       case null:
         return;
-        break;
       case false:
         return (
           <li>
@@ -17,7 +16,6 @@ class Header extends Component {
             </a>
           </li>
         );
-        break;
       default:
         return [
           <li key="0" style={{ margin: "0 10px" }}>
