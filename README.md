@@ -23,6 +23,7 @@ Server Side installs
 --npm install --save cookie-session
 --npm install --save stripe
 --npm install --save body-parser
+--npm install --save sendgrid
 
 Client Side installs
 --npm install -g create-react-app
