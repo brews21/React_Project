@@ -6,7 +6,8 @@ const { Schema } = mongoose; // -- this is valid same syntax as "const Schema = 
 const userSchema = new Schema({
   googleID: String,
   credits: { type: Number, default: 0 },
-  DisplayName: String
+  DisplayName: String,
+  Picture: String
 });
 
 // putting the schema into mongoose

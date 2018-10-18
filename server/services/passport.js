@@ -53,7 +53,8 @@ passport.use(
         //console.log("NOT LOGGED IN ADDING NEW USER");
         const user = await new User({
           googleID: profile.id,
-          DisplayName: profile.displayName
+          DisplayName: profile.displayName,
+          Picture: profile.photos[0].value
         }).save();
         done(null, user);
       }
