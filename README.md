@@ -33,6 +33,7 @@ Client Side installs
 --npm install --save materialize-css
 --npm install --save axios redux-thunk
 --npm install --save react-stripe-checkout
+--npm install --save redux-form
 
 package.json -- scripts to call
 "scripts": {
