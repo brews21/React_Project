@@ -3,13 +3,29 @@ import { reduxForm, Field } from "redux-form";
 import SurveyField from "./SurveyField";
 import _ from "lodash";
 import { Link } from "react-router-dom";
-
+import validateEmail from "../../utils/validateEmails";
 // const thats never going to change
 const FIELDS = [
-  { label: "Survey Title", name: "title" },
-  { label: "Subject Line", name: "subject" },
-  { label: "Email Body", name: "body" },
-  { label: "Recipient List", name: "emials" }
+  {
+    label: "Survey Title",
+    name: "title",
+    noValueError: "Please provide a Survey Title"
+  },
+  {
+    label: "Subject Line",
+    name: "subject",
+    noValueError: "Please provide a Subject for the survey"
+  },
+  {
+    label: "Email Body",
+    name: "body",
+    noValueError: "Please provide a body to the survey"
+  },
+  {
+    label: "Recipient List",
+    name: "emails",
+    noValueError: "Please provide a list of recipients"
+  }
 ];
 
 //when creating any list jsx need the unique key, using the name as this will be unique to any render function
@@ -49,9 +65,14 @@ class SurveyForm extends Component {
 function validate(values) {
   // if errors is empty then everything is valid
   const errors = {};
-  if (values.title) {
-    errors.title = "You must provide a title";
-  }
+
+  errors.emails = validateEmail(values.emails || "");
+
+  _.each(FIELDS, ({ name, noValueError }) => {
+    if (!values[name]) {
+      errors[name] = noValueError;
+    }
+  });
 
   return errors;
 }
