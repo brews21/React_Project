@@ -7,7 +7,8 @@ const userSchema = new Schema({
   googleID: String,
   credits: { type: Number, default: 0 },
   DisplayName: String,
-  Picture: String
+  Picture: String,
+  email: String
 });
 
 // putting the schema into mongoose
