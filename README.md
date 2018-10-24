@@ -24,6 +24,8 @@ Server Side installs
 --npm install --save stripe
 --npm install --save body-parser
 --npm install --save sendgrid
+--npm install --save localtunnel
+--npm install --save-dev forever
 
 Client Side installs
 --npm install -g create-react-app
@@ -87,3 +89,8 @@ react app has its own server -- npm start -- within the client folder -- localho
 Deployment
 when using -- "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
 in the package.json, this is for the heroku build -- when using it to build the app on its server
+
+webhooks
+in package.json
+if on windows use current set up -- forever sendgrid_webhook.js
+if on linux replace with ./sendgrid_webhook.sh
