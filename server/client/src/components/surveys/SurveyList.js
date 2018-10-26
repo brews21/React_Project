@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchSurveys } from "../../actions";
+import { Link } from "react-router-dom";
 
 class SurveyList extends Component {
   componentDidMount() {
@@ -8,6 +9,28 @@ class SurveyList extends Component {
   }
 
   renderSurveys() {
+    //console.log(this.props.surveys.length);
+
+    if (this.props.surveys.length == 0) {
+      return <div>{this.renderNoSurveys()}</div>;
+    } else {
+      return <div>{this.renderSurveyCards()}</div>;
+    }
+  }
+
+  renderNoSurveys() {
+    return (
+      <div>
+        <p>You have no Surveys click below to create one</p>
+        <Link to="/surveys/new" className="waves-effect waves-light btn-large">
+          <i className="material-icons right">cloud</i>
+          button
+        </Link>
+      </div>
+    );
+  }
+
+  renderSurveyCards() {
     return this.props.surveys.reverse().map(survey => {
       return (
         <div className="card darken-1" key={survey._id}>
