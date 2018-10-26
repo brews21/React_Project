@@ -1,18 +1,16 @@
-const express = require("express"); // uses common modules for node -- use these on server side
 //import express from 'express' -- would be use on the front end
-
 // pulling in js so it will be excuted --
-require("./models/user"); // order of operations this must be done before calling "passport"
-require("./models/survey");
-require("./services/passport");
-
+const express = require("express");
 const mongoose = require("mongoose");
 const keys = require("./config/keys");
-
 const cookieSession = require("cookie-session");
 const passport = require("passport");
 const bodyParser = require("body-parser");
+require("./models/user");
+require("./models/survey");
+require("./services/passport");
 
+mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURL);
 
 // the express app variable
@@ -59,8 +57,8 @@ if(process.env.NODE_ENV === "production"){
   // if someone come looking for a route we donot understand
   // then look in here
   app.use(express.static("client/build"));
-  
-  // express will serve up index.html if 
+
+  // express will serve up index.html if
   // it doesnt recognize the routes
   const path = require("path");
   app.get("*", (req, res) => {
