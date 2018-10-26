@@ -11,7 +11,7 @@ class SurveyList extends Component {
   renderSurveys() {
     //console.log(this.props.surveys.length);
 
-    if (this.props.surveys.length == 0) {
+    if (this.props.surveys.length === 0) {
       return <div>{this.renderNoSurveys()}</div>;
     } else {
       return <div>{this.renderSurveyCards()}</div>;
@@ -24,7 +24,7 @@ class SurveyList extends Component {
         <p>You have no Surveys click below to create one</p>
         <Link to="/surveys/new" className="waves-effect waves-light btn-large">
           <i className="material-icons right">cloud</i>
-          button
+          Create Survey
         </Link>
       </div>
     );
