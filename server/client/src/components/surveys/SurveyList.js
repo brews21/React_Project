@@ -3,8 +3,6 @@ import { connect } from "react-redux";
 import { fetchSurveys } from "../../actions";
 import { Link } from "react-router-dom";
 
-import loginDropdown from "../dropdown/loginDropdown"
-
 class SurveyList extends Component {
   componentDidMount() {
     this.props.fetchSurveys();
